@@ -3,3 +3,18 @@ sel=cars[dr]
 #Creat car maniac: Observe which countries have car cap over 500 
 #We create a boolatan list to find out which countries have more or less then 500. If a countries has more or equal to the amount, then the statement should be true if a countries has less then the statement should be false 
 many_cars=cars['car_per_cap']>500
+# Import cars data
+import pandas as pd
+cars = pd.read_csv('cars.csv', index_col = 0)
+
+# Import numpy, you'll need this
+import numpy as np
+
+# Create medium: observations with cars_per_cap between 100 and 500
+cpc=cars['cars_per_cap']
+between=np.logical_and(cpc>=100,cpc<=500)
+medium=cars[between]
+
+
+# Print medium
+print(medium)
